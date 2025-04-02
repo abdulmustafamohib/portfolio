@@ -10,7 +10,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid max-w-7xl grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-6 gap-4 lg:gap-8 mx-auto",
         className,
       )}
     >
@@ -43,13 +43,29 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "group/bento shadow-input row-span-1 relative flex flex-col justify-between space-y-4 rounded-3xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between p-6 pb-10 flex flex-col space-y-4",
         className,
       )}
+      style={{
+        background: 'rgb(2,0,36)',
+        backgroundColor: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,25,34,1) 35%, rgba(50,33,77,1) 100%)'
+      }}
     >
-      {header}
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
+        <div className="w-full h-full absolute">
+          {img && (
+            <img
+              src={img}
+              alt={img}
+              className={cn(imgClassName, "object-cover object-center ")}
+            />
+          )}
+        </div>
+
+        
+      </div>
+
       <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {icon}
         <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
           {title}
         </div>

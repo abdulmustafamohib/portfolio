@@ -7,10 +7,10 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20" id = 'projects'>
-      <h1 className="heading">
+    <div className="py-20 bg-white" id = 'projects'>
+      <h1 className="heading text-black">
         A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        <span className="text-red-800">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
         {projects.map((item) => (
@@ -36,7 +36,7 @@ const RecentProjects = () => {
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-red-400">
                 {item.title}
               </h1>
 
@@ -66,10 +66,10 @@ const RecentProjects = () => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-red-400">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <FaLocationArrow className="ms-3 text-red-400" />
                 </div>
               </div>
             </PinContainer>

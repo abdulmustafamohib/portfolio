@@ -16,7 +16,7 @@ const MagicButton = ({
   return (
     <button 
         className="relative inline-flex h-12 w-full overflow-hidden 
-        rounded-lg p-[1px] focus:outline-none md:w-60 md:mt-10"
+        rounded-lg p-[1px] focus:outline-none md:w-60 md:mt-10 bg-red-800"
         onClick={handleClick}
     >
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
@@ -24,8 +24,8 @@ const MagicButton = ({
         
         <span 
             className={`inline-flex h-full w-full cursor-pointer items-center 
-                justify-center rounded-lg bg-slate-950 px-5 gap-2 text-sm 
-                font-medium text-white backdrop-blur-3xl gap-2${otherClasses}`}>
+                justify-center rounded-lg bg-red-400 px-5 gap-2 text-sm 
+              text-black font-bold backdrop-blur-3xl gap-2${otherClasses}`}>
 
             {position === 'left' && icon}
             {title}

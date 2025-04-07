@@ -7,9 +7,9 @@ import { PinContainer } from "./ui/Pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20 bg-white" id = 'projects'>
-      <h1 className="heading text-black">
-        A small selection of{" "}
+    <div className="py-20" id = 'projects'>
+      <h1 className="heading text-white">
+        a small selection of{" "}
         <span className="text-red-800">recent projects</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
@@ -36,40 +36,26 @@ const RecentProjects = () => {
                 />
               </div>
 
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-red-400">
+              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1 text-red-800">
                 {item.title}
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-xl lg:font-normal text-sm line-clamp-2"
                 style={{
-                  color: "#BEC1DD",
+                  color: "#000000",
                   margin: "1vh 0",
                 }}
               >
                 {item.des}
               </p>
 
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
-                </div>
-
+              <div className="flex items-center justify-end mt-7 mb-3">
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-red-400">
+                  <p className="flex lg:text-xl md:text-xs text-sm text-red-800">
                     Check Live Site
                   </p>
-                  <FaLocationArrow className="ms-3 text-red-400" />
+                  <FaLocationArrow className="ms-3 text-red-800" />
                 </div>
               </div>
             </PinContainer>

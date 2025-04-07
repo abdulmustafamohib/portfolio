@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const svgToDataUri = require("mini-svg-data-uri");
 
@@ -159,6 +162,9 @@ const config = {
         fifth: "moveInCircle 20s ease infinite",
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "meteor-effect": "meteor 5s linear infinite",
+        "meteor-left": "meteor-left 5s linear infinite",
+        "meteor-right": "meteor-right 5s linear infinite",
       },
     },
   },

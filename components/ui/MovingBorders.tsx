@@ -27,7 +27,6 @@ export const Button = ({
   children,
   containerClassName,
   borderClassName,
-  style,
   ...rest
 }: ButtonProps) => {
   return (

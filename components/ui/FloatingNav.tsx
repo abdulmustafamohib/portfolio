@@ -26,12 +26,9 @@ export const FloatingNav = ({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      const direction = window.scrollY > lastScrollY ? "down" : "up";
       // You can use this value if you want to hide/show manually
-      lastScrollY = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);

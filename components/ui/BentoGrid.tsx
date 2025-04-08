@@ -101,43 +101,42 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-black z-10">
-            {description}
-          </div>
-          {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
-          {/* remove mb-2 mt-2 */}
-          <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-          >
-            {title}
-          </div>
+          {(id !== 3) && (
+            <>
+              <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-black z-10">
+                {description}
+              </div>
+              <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
+                {title}
+              </div>
+            </>
+          )}
+
 
           {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="absolute inset-y-0 right-5 flex items-center gap-6">
-            {/* Left Column */}
-              <div className="flex flex-col gap-3">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black text-red-400"
-                  >
-                    {item}
-                  </span>
-                ))}
+            <div className="flex flex-col lg:flex-row items-center justify-between mt-6 z-10 w-full gap-6">
+              {/* Left text block - centered vertically */}
+              <div className="flex flex-col justify-center items-start h-full lg:pr-6">
+                <p className="text-sm text-black/70 mb-1">
+                  Yes, I do know all of these
+                </p>
+                <h2 className="text-2xl lg:text-3xl font-bold text-black">
+                  My tech stack
+                </h2>
               </div>
-              
-              {/* Right Column */}
-              <div className="flex flex-col gap-3">
-                {rightLists.map((item, i) => (
+
+              {/* Tech stack grid on the right */}
+              <div className="grid grid-cols-2 gap-3">
+                {[...leftLists, ...rightLists].map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black text-red-400"
+                    className="px-4 py-2 text-sm lg:text-base opacity-80 rounded-lg text-center bg-black text-red-400 whitespace-nowrap"
                   >
-                    {item}
+                    {tech}
                   </span>
                 ))}
               </div>

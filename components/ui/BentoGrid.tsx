@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 
-import Lottie from "react-lottie";
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { cn } from "@/lib/utils";
 
@@ -40,21 +42,17 @@ export const BentoGridItem = ({
   title,
   description,
   img,
-  imgClassName,
   titleClassName,
-  spareImg,
 }: {
   className?: string;
   id: number;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   img?: string;
-  imgClassName?: string;
   titleClassName?: string;
-  spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "NextJS", "Typescript"];
-  const rightLists = ["Tailwind", "NuxtJS", "NodeJS"];
+  const leftLists = ["C/C++", "Python", "Java", "Tailwind"];
+  const rightLists = ["TypeScript", "JavaScript", "NextJS", "React"];
 
   const [copied, setCopied] = useState(false);
 
@@ -76,35 +74,27 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        // remove p-4 rounded-3xl dark:bg-black dark:border-white/[0.2] bg-white  border border-transparent, add border border-white/[0.1] overflow-hidden relative
-        "row-span-1 relative overflow-hidden rounded-3xl border text-black bg-red-400 border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        "row-span-1 relative overflow-hidden rounded-3xl border text-black border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+        id === 6 ? "bg-red-950 text-white" : "bg-red-400",
         className
       )}
     >
       {/* add img divs */}
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
-        <div className="w-full h-full absolute">
-          {img && (
-            <img
-              src={img}
-              alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
-            />
-          )}
+      {img && (
+      <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
+        <div className="relative w-full h-full">
+          <Image
+            src={img}
+            alt="background"
+            fill
+            className="object-cover object-center transition-all duration-300 scale-110 blur-md"
+            unoptimized
+          />
         </div>
-        <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
-        >
-          {spareImg && (
-            <img
-              src={spareImg}
-              alt={spareImg}
-              //   width={220}
-              className="object-cover object-center w-full h-full"
-            />
-          )}
-        </div>
+        <div className="absolute inset-0" />
+      </div>
+    )}
         {id === 6 && (
           <BackgroundGradientAnimation>
             {}
@@ -141,7 +131,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-black"
+                    lg:opacity-100 rounded-lg text-center bg-black text-red-400"
                   >
                     {item}
                   </span>
@@ -154,7 +144,7 @@ export const BentoGridItem = ({
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-black"
+                    lg:opacity-100 rounded-lg text-center bg-black text-red-400"
                   >
                     {item}
                   </span>

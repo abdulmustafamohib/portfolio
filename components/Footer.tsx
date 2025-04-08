@@ -1,7 +1,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
             Feel free to reach out and connect!
           </p>
           <div className="mt-10">
-            <a href="mailto:contact@jsmastery.pro">
+            <a href="mailto:mohib.abdulmustafa@gmail.com">
               <MagicButton
                 title="contact me"
                 icon={<FaLocationArrow />}
@@ -39,7 +39,13 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="w-10 h-10 flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 transition-transform hover:scale-110"
             >
-              <img src={info.img} alt="icon" width={20} height={20} />
+              <Image 
+                src={info.img} 
+                alt="social icon" 
+                width={20} 
+                height={20}
+                unoptimized
+              />
             </a>
           ))}
           </div>

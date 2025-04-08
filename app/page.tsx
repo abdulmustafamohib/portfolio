@@ -7,12 +7,10 @@ import SpotlightLayout from "@/components/ui/SpotlightLayout";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Footer from "@/components/Footer";
 import { navItems } from "@/data";
-import Image from "next/image";
-import { FaHome } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-black h-full">
+    <main className="flex flex-col items-center bg-black">
       <div className="container mx-auto px-12">
         <FloatingNav navItems={navItems} />
         <Hero />

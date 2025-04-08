@@ -10,27 +10,28 @@ import {
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-export function Button({
-  borderRadius = "1.75rem",
-  children,
-  as: Component = "button",
-  containerClassName,
-  borderClassName,
-  duration,
-  className,
-  ...otherProps
-}: {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   borderRadius?: string;
-  children: React.ReactNode;
-  as?: any;
-  containerClassName?: string;
-  borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
-}) {
+  children: React.ReactNode;
+  containerClassName?: string;
+  borderClassName?: string;
+  style?: React.CSSProperties;
+}
+
+export const Button = ({
+  borderRadius = "1.75rem",
+  duration = 2000,
+  className,
+  children,
+  containerClassName,
+  borderClassName,
+  style,
+  ...rest
+}: ButtonProps) => {
   return (
-    <Component
+    <button
       className={cn(
         // remove h-16 w-40, add  md:col-span-2
         "bg-transparent relative text-xl p-[1px] overflow-hidden md:col-span-2 md:row-span-1",
@@ -39,7 +40,7 @@ export function Button({
       style={{
         borderRadius: borderRadius,
       }}
-      {...otherProps}
+      {...rest}
     >
       <div
         className="absolute inset-0 rounde-[1.75rem]"
@@ -66,9 +67,9 @@ export function Button({
       >
         {children}
       </div>
-    </Component>
+    </button>
   );
-}
+};
 
 export const MovingBorder = ({
   children,
@@ -81,10 +82,10 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
-    const pathRef = useRef<SVGRectElement | null>(null);
-    const progress = useMotionValue<number>(0);
+  const pathRef = useRef<SVGRectElement | null>(null);
+  const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
     const length = pathRef.current?.getTotalLength();

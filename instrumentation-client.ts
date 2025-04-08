@@ -24,9 +24,14 @@ Sentry.init({
     }),
 
     Sentry.feedbackIntegration({
-        // Additional SDK configuration goes in here, for example:
-        colorScheme: "dark",
-      }),
+      colorScheme: "custom",
+      buttonOptions: {
+        backgroundColor: "#b91c1c", // Tailwind's red-700
+        textColor: "#ffffff",       // white
+        position: "bottom-right",   // or wherever you want it
+        label: "Report an issue",   // optional
+      },
+    }),
   ],
 
 });

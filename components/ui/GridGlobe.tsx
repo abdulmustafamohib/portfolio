@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 
 const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
@@ -10,18 +9,18 @@ const World = dynamic(() => import("../ui/Globe").then((m) => m.World), {
 export function GridGlobe() {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#062056",
+    globeColor: "#000000",       
     showAtmosphere: true,
-    atmosphereColor: "#FFFFFF",
+    atmosphereColor: "#991b1b",        
     atmosphereAltitude: 0.1,
-    emissive: "#062056",
+    emissive: "#000000",               
     emissiveIntensity: 0.1,
     shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#38bdf8",
-    directionalLeftLight: "#ffffff",
-    directionalTopLight: "#ffffff",
-    pointLight: "#ffffff",
+    polygonColor: "rgba(153,27,27,0.4)", 
+    ambientLight: "#991b1b",            
+    directionalLeftLight: "#ffcccc",    
+    directionalTopLight: "#ffcccc",
+    pointLight: "#ffcccc",
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
@@ -30,7 +29,8 @@ export function GridGlobe() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  
+  const colors = ["#f87171", "#fca5a5", "#fecaca"]; 
   const sampleArcs = [
     {
       order: 1,

@@ -26,7 +26,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         // change gap-4 to gap-8, change grid-cols-3 to grid-cols-5, remove md:auto-rows-[18rem], add responsive code
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto",
+        "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-8 auto-rows-fr",
         className
       )}
     >
@@ -73,7 +73,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border text-black border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
+"       relative overflow-hidden rounded-3xl border h-full min-h-[14rem] flex flex-col justify-between",
         id === 6 ? "bg-red-950 text-white" : "bg-red-400",
         className
       )}
@@ -119,8 +119,8 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
               {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
+              <div className="flex gap-3 lg:gap-5 flex-wrap justify-start items-start z-10 mt-4">
+              {leftLists.map((item, i) => (
                   <span
                     key={i}
                     className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
@@ -129,7 +129,6 @@ export const BentoGridItem = ({
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-black"></span>
               </div>
               <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
                 <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-black"></span>

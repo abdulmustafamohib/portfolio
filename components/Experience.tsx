@@ -1,5 +1,5 @@
 import React from "react";
-import { workExperience } from "@/data";
+import { workExperience } from "@/Data";
 import { Button } from "./ui/MovingBorders";
 import Image from "next/image";
 

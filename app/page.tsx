@@ -6,7 +6,7 @@ import Approach from "@/components/Approach";
 import SpotlightLayout from "@/components/ui/SpotlightLayout";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import Footer from "@/components/Footer";
-import { navItems } from "@/data";
+import { navItems } from "@/Data";
 
 export default function Home() {
   return (

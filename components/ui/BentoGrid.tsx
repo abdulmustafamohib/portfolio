@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 
 import GridGlobe from "./GridGlobe";
-import animationData from "@/data/confetti.json";
+import animationData from "@/Data/confetti.json";
 import MagicButton from "./MagicButton";
 
 

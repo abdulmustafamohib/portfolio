@@ -25,7 +25,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 gap-4 w-full mx-auto md:grid-cols-6 lg:grid-cols-5",
+        "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto",
         className
       )}
     >
@@ -74,16 +74,16 @@ export const BentoGridItem = ({
       className={cn(
         "row-span-1 relative overflow-hidden rounded-3xl border text-black border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none flex flex-col",
         id === 6 ? "bg-red-950 text-white" : "bg-red-400",
-        id === 1 ? "md:col-span-6 lg:col-span-3" : "",
-        id === 2 ? "md:col-span-3 lg:col-span-2" : "",
-        id === 3 ? "md:col-span-3 lg:col-span-2" : "",
-        id === 4 ? "md:col-span-3 lg:col-span-2" : "",
-        id === 5 ? "md:col-span-3 lg:col-span-3" : "",
-        id === 6 ? "md:col-span-3 lg:col-span-2" : "",
+        id === 1 ? "md:col-span-3 lg:col-span-3 md:row-span-2" : "",
+        id === 2 ? "md:col-span-2 lg:col-span-2 md:row-span-2" : "",
+        id === 3 ? "md:col-span-1 lg:col-span-2 md:row-span-2" : "",
+        id === 4 ? "md:col-span-3 lg:col-span-2 md:row-span-1" : "",
+        id === 5 ? "md:col-span-2 lg:col-span-3 md:row-span-2" : "",
+        id === 6 ? "md:col-span-1 lg:col-span-2 md:row-span-1" : "",
         className
       )}
     >
-      <div className={cn("h-full w-full relative", id === 6 && "flex justify-center")}>
+      <div className={cn("h-full w-full relative min-h-[200px]", id === 6 && "flex justify-center")}>
         {img && (
           <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
             <div className="relative w-full h-full">

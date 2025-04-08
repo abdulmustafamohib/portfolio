@@ -25,7 +25,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto",
+        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 gap-4 w-full mx-auto",
         className
       )}
     >
@@ -72,18 +72,18 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border text-black border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none flex flex-col",
+        "row-span-1 relative overflow-hidden rounded-3xl border text-black border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none flex flex-col space-y-4",
         id === 6 ? "bg-red-950 text-white" : "bg-red-400",
-        id === 1 ? "md:col-span-3 lg:col-span-3 md:row-span-2" : "",
-        id === 2 ? "md:col-span-2 lg:col-span-2 md:row-span-2" : "",
-        id === 3 ? "md:col-span-1 lg:col-span-2 md:row-span-2" : "",
-        id === 4 ? "md:col-span-3 lg:col-span-2 md:row-span-1" : "",
-        id === 5 ? "md:col-span-2 lg:col-span-3 md:row-span-2" : "",
-        id === 6 ? "md:col-span-1 lg:col-span-2 md:row-span-1" : "",
+        id === 1 ? "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]" : "",
+        id === 2 ? "lg:col-span-2 md:col-span-3 md:row-span-2" : "",
+        id === 3 ? "lg:col-span-2 md:col-span-3 md:row-span-2" : "",
+        id === 4 ? "lg:col-span-2 md:col-span-3 md:row-span-1" : "",
+        id === 5 ? "md:col-span-3 md:row-span-2" : "",
+        id === 6 ? "lg:col-span-2 md:col-span-3 md:row-span-1" : "",
         className
       )}
     >
-      <div className={cn("h-full w-full relative min-h-[200px]", id === 6 && "flex justify-center")}>
+      <div className={`${id === 6 && "flex justify-center"} h-full`}>
         {img && (
           <div className="absolute inset-0 z-0 overflow-hidden rounded-3xl">
             <div className="relative w-full h-full">
@@ -104,26 +104,22 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          <div className="font-sans font-extralight md:max-w-32 md:text-sm lg:text-base text-sm text-black z-10">
+          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-black z-10">
             {description}
           </div>
-          <div className="font-sans text-xl lg:text-3xl max-w-96 font-bold z-10 mt-2">
+          <div className="font-sans text-lg lg:text-3xl max-w-96 font-bold z-10">
             {title}
           </div>
 
-          {id === 2 && (
-            <div className="absolute inset-0 w-full h-full overflow-hidden">
-              <GridGlobe />
-            </div>
-          )}
+          {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="absolute inset-y-0 right-5 flex items-center gap-4 lg:gap-6">
+            <div className="absolute inset-y-0 right-5 flex items-center gap-6">
               <div className="flex flex-col gap-3">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="px-3 py-2 text-xs lg:text-sm opacity-90 rounded-lg text-center bg-black text-red-400"
+                    className="px-3 py-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black text-red-400"
                   >
                     {item}
                   </span>
@@ -133,7 +129,7 @@ export const BentoGridItem = ({
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="px-3 py-2 text-xs lg:text-sm opacity-90 rounded-lg text-center bg-black text-red-400"
+                    className="px-3 py-2 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-black text-red-400"
                   >
                     {item}
                   </span>

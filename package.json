@@ -12,6 +12,7 @@
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.1",
     "@sentry/nextjs": "^9.10.1",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
     "mini-svg-data-uri": "^1.4.4",

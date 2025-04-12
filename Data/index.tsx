@@ -121,7 +121,7 @@ export const navItems = [
     {
       id: 1,
       title: "AI Developer",
-      desc: "Working with Neolific to build the next AI \"Main Character\"",
+      desc: "Working with Neolific to deploy impactful AI driven projects solving real-world issues",
       className: "md:col-span-2",
       thumbnail: "/neolific.svg",
     },
